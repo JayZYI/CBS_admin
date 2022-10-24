@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"></link>
+    
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        <nav class="navbar sticky-top navbar-dark bg-dark navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="detailedPage.xhtml">    
+                <img src="https://cdn-icons-png.flaticon.com/512/2280/2280236.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+                    C B S
+            </a>
+            <ul class="navbar-nav">  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Admin Privillage</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="homePage.xhtml">View Comic Page</a></li>
+                    <li><a class="dropdown-item" href="dahsboard.xhtml">Edit Book's Data</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Edit User's Data</a></li>
+                  </ul>
+                </li>
+                <li>
+                    <a href="index.xhtml" class="btn btn-outline-success me-2" type="button">Log Out</a>
+                </li>
+              </ul>
+        </div>
+    </nav>
+        <h:form>
+            <div class="container" style="padding: 10px 0;" > 
+                <div class="row">
+                    <ui:repeat value="#{TblBook.getAllRecords()}" var="Produk" style="width: 18rem; padding-bottom: 2rem">
+                    <div class="card mx-3">
+                        <img src="#{Produk.cover}" class="card-img-top" alt="csman" width="230px" height="268px"/>
+                        <div class="card-body">
+                            <h5 class="card-title">#{Produk.title}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">#{Produk.author}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">#{Produk.genre}</h6>
+                            <h:commandButton value="More" class="btn btn-primary disabled" action="#{TblBook.getProduk()}"/>
+                        </div>
+                    </div>
+                    </ui:repeat>
+                </div>
+            </div>
+        </h:form>
+        
+        <!--JavaScript Bundle with Popper--> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    </h:body>
+</html>
+
