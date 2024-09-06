@@ -1,5 +1,5 @@
 # Comic Book Store
-## Java-JSF-sql
+## Java-JSF-sql-bs5
 Simple CRUP web for admin
 
 ![s3q1](https://github.com/user-attachments/assets/f63b88d5-ff6f-4a37-9bda-32179ecf5c66)
